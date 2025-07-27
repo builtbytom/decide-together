@@ -58,7 +58,7 @@ function SwipeCard({ option, onSwipe }) {
         <div className="card-image" style={{ backgroundImage: `url(${option.image})` }} />
       )}
       <div className="card-content">
-        <div className="card-emoji">{option.emoji}</div>
+        {!option.image && <div className="card-emoji">{option.emoji}</div>}
         <h3>{option.name}</h3>
         <p className="cuisine-tag">{option.cuisine}</p>
         <p className="description">{option.description}</p>

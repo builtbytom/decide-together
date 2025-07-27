@@ -1,6 +1,6 @@
 .results-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +104,7 @@
 
 /* Primary Button */
 .primary-button {
-  background: #ffd60a;
+  background: #feca57;
   color: #333;
   border: none;
   padding: 1rem 2.5rem;
