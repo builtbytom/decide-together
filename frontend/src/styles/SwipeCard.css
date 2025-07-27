@@ -1,0 +1,167 @@
+.swipe-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  animation: cardEntrance 0.4s ease-out;
+}
+
+@keyframes cardEntrance {
+  0% {
+    transform: scale(0.9) translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.swipe-card:hover {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 30px 35px -5px rgba(0, 0, 0, 0.15),
+    0 15px 15px -5px rgba(0, 0, 0, 0.06);
+}
+
+.swipe-card:active {
+  cursor: grabbing;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+.card-emoji {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.card-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.cuisine-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* Swipe indicators */
+.swipe-indicator {
+  position: absolute;
+  top: 60px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.swipe-indicator.like {
+  right: 20px;
+  background: linear-gradient(135deg, #4fc3f7 0%, #38a1db 100%);
+  color: white;
+  transform: rotate(12deg);
+  animation: bounceIn 0.3s ease;
+}
+
+.swipe-indicator.nope {
+  left: 20px;
+  background: linear-gradient(135deg, #ff4458 0%, #e63946 100%);
+  color: white;
+  transform: rotate(-12deg);
+  animation: bounceIn 0.3s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0) rotate(12deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(12deg);
+  }
+  100% {
+    transform: scale(1) rotate(12deg);
+    opacity: 1;
+  }
+}
+
+/* Card animation */
+@keyframes slideOut {
+  to {
+    transform: translateX(150%) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+.swipe-card.swiping-right {
+  animation: slideOut 0.5s ease-out forwards;
+}
+
+.swipe-card.swiping-left {
+  animation: slideOut 0.5s ease-out forwards reverse;
+}

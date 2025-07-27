@@ -1,0 +1,148 @@
+.swipe-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+.swipe-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.swipe-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swipe-header p {
+  opacity: 0.9;
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+}
+
+.swipe-area {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 500px;
+  margin-bottom: 2rem;
+}
+
+.swipe-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.swipe-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.swipe-button.nope {
+  background: linear-gradient(135deg, #ff4458 0%, #e63946 100%);
+  color: white;
+}
+
+.swipe-button.nope:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 4px rgba(255, 68, 88, 0.2);
+}
+
+.swipe-button.nope:active {
+  transform: translateY(0);
+}
+
+.swipe-button.yum {
+  background: linear-gradient(135deg, #4fc3f7 0%, #38a1db 100%);
+  color: white;
+}
+
+.swipe-button.yum:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 4px rgba(79, 195, 247, 0.2);
+}
+
+.swipe-button.yum:active {
+  transform: translateY(0);
+}
+
+/* Waiting Screen */
+.waiting-screen {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.waiting-screen h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  margin: 2rem auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .swipe-area {
+    height: 400px;
+  }
+  
+  .swipe-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .swipe-buttons {
+    gap: 1rem;
+  }
+  
+  .swipe-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
