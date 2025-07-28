@@ -110,7 +110,8 @@ function NewLandingPage() {
 
         <div className="hero-visual">
           <div className="phone-mockup">
-            <div className="success-meal">
+            <div className="phone-screen">
+              <div className="success-meal">
               <div className="meal-header">
                 <span className="success-badge">🎉 JACKPOT MEAL</span>
                 <h3>Taco Bar Night</h3>
@@ -147,6 +148,7 @@ function NewLandingPage() {
                   <span className="value">$35</span>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
